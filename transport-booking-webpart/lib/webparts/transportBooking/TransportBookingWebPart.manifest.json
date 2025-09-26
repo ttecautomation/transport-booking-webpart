@@ -1,0 +1,43 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
+  "id": "12345678-1234-1234-1234-123456789012",
+  "alias": "TransportBookingWebPart",
+  "componentType": "WebPart",
+  "version": "1.0.0",
+  "manifestVersion": 2,
+  "requiresCustomScript": false,
+  "supportedHosts": [
+    "SharePointWebPart", 
+    "TeamsPersonalApp", 
+    "TeamsTab", 
+    "SharePointFullPage"
+  ],
+  "supportsThemeVariants": true,
+  "preconfiguredEntries": [
+    {
+      "groupId": "5c03119e-3074-46fd-976b-c60198311f70",
+      "group": { "default": "Advanced" },
+      "title": { "default": "Transport Booking" },
+      "description": { "default": "Two-way transport booking form for employees with real-time validation and SharePoint integration" },
+      "officeFabricIconFontName": "BusTransport",
+      "properties": {
+        "description": "Employee transport booking form with dynamic scheduling",
+        "apiEndpoint": "https://app-mti-api-prod.azurewebsites.net/api",
+        "enableDebugMode": false,
+        "defaultSite": "",
+        "showUserInfo": true,
+        "enableNotifications": true,
+        "maxRetryAttempts": 3,
+        "requestTimeout": 30000,
+        "compactMode": false,
+        "autoAdvanceSections": false
+      }
+    }
+  ],
+  "loaderConfig": {
+    "entryModuleId": "transport-booking-web-part",
+    "internalModuleBaseUrls": [
+      "https://unpkg.com/"
+    ]
+  }
+}

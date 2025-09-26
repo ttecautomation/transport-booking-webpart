@@ -1,0 +1,32 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "transport-booking-webpart-client-side-solution",
+    "id": "a2b3c4d5-e6f7-8901-2345-678901234567",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "TTEC Holdings",
+      "websiteUrl": "https://www.ttec.com",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "1234567"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "Transport Booking System"
+      },
+      "longDescription": {
+        "default": "Transport Booking System for TTEC employees"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    }
+  },
+  "paths": {
+    "zippedPackage": "solution/transport-booking.sppkg"
+  }
+}
