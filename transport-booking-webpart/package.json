@@ -1,0 +1,43 @@
+{
+  "name": "transport-booking-webpart",
+  "version": "1.0.0",
+  "private": true,
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "gulp bundle",
+    "clean": "gulp clean",
+    "test": "gulp test",
+    "serve": "gulp bundle --custom-serve && gulp serve"
+  },
+  "dependencies": {
+    "@emotion/react": "11.11.1",
+    "@emotion/styled": "11.11.0",
+    "@microsoft/sp-core-library": "1.18.2",
+    "@microsoft/sp-property-pane": "1.18.2",
+    "@microsoft/sp-webpart-base": "1.18.2",
+    "@mui/icons-material": "5.14.19",
+    "@mui/material": "5.14.20",
+    "axios": "1.6.0",
+    "dayjs": "1.11.10",
+    "react": "17.0.1",
+    "react-dom": "17.0.1"
+  },
+  "devDependencies": {
+    "@microsoft/eslint-config-spfx": "^1.18.2",
+    "@microsoft/rush-stack-compiler-4.7": "0.1.1",
+    "@microsoft/sp-build-web": "1.18.2",
+    "@microsoft/sp-module-interfaces": "1.18.2",
+    "@microsoft/sp-tslint-rules": "1.18.2",
+    "@rushstack/eslint-patch": "^1.5.1",
+    "@types/react": "17.0.45",
+    "@types/react-dom": "17.0.17",
+    "@types/webpack-env": "1.18.8",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "@typescript-eslint/parser": "^5.62.0",
+    "eslint": "^8.57.0",
+    "typescript": "4.7.4"
+  },
+  "engines": {
+    "node": ">=16.13.0 <17.0.0"
+  }
+}

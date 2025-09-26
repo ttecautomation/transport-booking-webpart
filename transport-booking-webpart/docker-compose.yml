@@ -1,0 +1,40 @@
+# version: "3.8"
+services:
+  spfx-serve-https:
+    build:
+      context: .
+      target: builder
+    working_dir: /workspace
+    command: >
+      sh -lc "
+        mkdir -p ~/.gcb-serve-data &&
+        [ -f ~/.gcb-serve-data/localhost.crt ] || openssl req -x509 -nodes -newkey rsa:2048
+        -keyout ~/.gcb-serve-data/localhost.key
+        -out ~/.gcb-serve-data/localhost.crt
+        -subj '/CN=localhost'
+        -days 365
+        -addext 'subjectAltName=DNS:localhost,IP:127.0.0.1' &&
+        npx gulp serve --https true --cert ~/.gcb-serve-data/localhost.crt --key ~/.gcb-serve-data/localhost.key
+      "
+    ports:
+      - "4321:4321"
+      - "5432:5432"
+    volumes:
+      - ./:/workspace:delegated
+      - spfx_node_modules:/workspace/node_modules
+
+  spfx-serve-http:
+    build:
+      context: .
+      target: builder
+    working_dir: /workspace
+    command: sh -lc "npx gulp serve --https false --nobrowser"
+    ports:
+      - "4321:4321"
+      - "5432:5432"
+    volumes:
+      - ./:/workspace:delegated
+      - spfx_node_modules:/workspace/node_modules
+
+volumes:
+  spfx_node_modules:
